@@ -1,9 +1,8 @@
+import { routes } from "./Routes";
+import { RouterProvider } from "react-router-dom";
+
 function App() {
-  return (
-    <div>
-      <div className=" text-gray-500">GreyBox</div>
-    </div>
-  );
+  return <RouterProvider router={routes}></RouterProvider>;
 }
 
 export default App;

@@ -9,7 +9,7 @@ const RecoverPassword = () => {
   return (
     <AuthLayout
       child={
-        <div className="w-[29.0625rem] lg:w-[36.33%] min-h-[100vh] bg-grey-1 p-[51px_25px]">
+        <div className="w-full md:w-[50.33%] lg:w-[45.33%] min-h-[100vh] bg-grey-1 p-[51px_25px]">
           <BackArrow />
           <h2 className=" text-[2.5rem] text-black-1 font-[700] mt-[50px] leading-[40px]">
             Forgot Password

@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import { LinkIcon, ToolIcon } from "./icons/Icons";
 
 export type MenuProps = {
@@ -12,11 +11,16 @@ export const Menu = ({ icon, label, onClick }: MenuProps) => (
   </div>
 );
 
-export const QuickLink = ({ label, link }: { label: string; link: string }) => {
-  const navigate = useNavigate();
+export const QuickLink = ({
+  label,
+  onClick,
+}: {
+  label: string;
+  onClick: React.MouseEventHandler<HTMLDivElement> | undefined;
+}) => {
   return (
     <div
-      onClick={() => navigate(link)}
+      onClick={onClick}
       className="flex flex-col items-center gap-y-[8px] cursor-pointer"
     >
       <LinkIcon />
@@ -65,6 +69,37 @@ export const DetailsCard = ({
         </div>
       </div>
       <div className="text-[0.75rem] leading-[12px] text-black-3">{amount}</div>
+    </div>
+  </section>
+);
+
+export const NotificationsCard = ({
+  text,
+  subText,
+  date,
+  onClick,
+}: {
+  text: string;
+  subText: string;
+  date: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+}) => (
+  <section onClick={onClick} className="w-full p-[0px_24px]  cursor-pointer">
+    <div
+      className={` flex justify-between items-center px-[14px] gap-x-[55px] `}
+    >
+      <div className="flex items-center gap-x-[16px]">
+        <ToolIcon />
+        <div className="flex flex-col gap-y-[6px]">
+          <p className="text-[0.875rem] leading-[18px] text-black-2">{text}</p>
+          <p className="text-[0.75rem] leading-[12px] text-black-3">
+            {subText}
+          </p>
+        </div>
+      </div>
+      <div className="text-[0.75rem] leading-[12px] text-black-3 min-w-fit">
+        {date}
+      </div>
     </div>
   </section>
 );

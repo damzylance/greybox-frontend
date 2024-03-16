@@ -8,13 +8,13 @@ const AppLayout = ({ child }: { child: React.ReactNode }) => {
   return (
     <div className=" bg-grey-box-bg bg-cover bg-no-repeat w-full min-h-[100vh] flex justify-center">
       {child}
-      <section className="w-full h-[54px] flex justify-between fixed bottom-0 bg-grey-1 p-[5px_65px]">
+      <section className="w-full h-[54px] flex justify-between fixed bottom-0 bg-grey-1 p-[5px_24px] md:p-[5px_65px]">
         <Menu
           icon={<Home />}
           label="Home"
           onClick={() => navigate("/dashboard")}
         />
-        <Menu icon={<Send />} label="Send" onClick={() => navigate("")} />
+        <Menu icon={<Send />} label="Send" onClick={() => navigate("/send")} />
         <Menu icon={<Cards />} label="Cards" onClick={() => navigate("")} />
         <Menu icon={<Wallet />} label="Wallet" onClick={() => navigate("")} />
         <Menu icon={<More />} label="More" onClick={() => navigate("")} />

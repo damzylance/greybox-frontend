@@ -7,6 +7,14 @@ import RecoverPassword from "./pages/auth/RecoverPassword";
 import LockScreen from "./pages/auth/LockScreen";
 import WelcomeScreen from "./pages/auth/WelcomeScreen";
 import Dashboard from "./pages/app/Dashboard";
+import AllTransaction from "./pages/app/AllTransaction";
+import Send from "./pages/app/Send";
+import MobileMoneyDeposit from "./pages/app/MobileMoneyDeposit";
+import PaychantDeposit from "./pages/app/PaychantDeposit";
+import MobileMoneyWithdrawal from "./pages/app/MobileMoneyWithdrawal";
+import PaychantWithdrawal from "./pages/app/PaychantWithdrawal";
+import Notifications from "./pages/app/Notifications";
+import Receive from "./pages/app/Receive";
 
 export const routes = createBrowserRouter([
   {
@@ -40,5 +48,37 @@ export const routes = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/all-transactions",
+    element: <AllTransaction />,
+  },
+  {
+    path: "/send",
+    element: <Send />,
+  },
+  {
+    path: "/deposit-via-mobile-money",
+    element: <MobileMoneyDeposit />,
+  },
+  {
+    path: "/deposit-via-paychant",
+    element: <PaychantDeposit />,
+  },
+  {
+    path: "/withdraw-via-mobile-money",
+    element: <MobileMoneyWithdrawal />,
+  },
+  {
+    path: "/withdraw-via-paychant",
+    element: <PaychantWithdrawal />,
+  },
+  {
+    path: "/notifications",
+    element: <Notifications />,
+  },
+  {
+    path: "/receive",
+    element: <Receive />,
   },
 ]);

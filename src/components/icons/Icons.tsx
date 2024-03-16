@@ -44,8 +44,20 @@ export const More = () => (
   <img src="/images/more.png" alt="" className=" cursor-pointer" />
 );
 
+export const DropDown = () => (
+  <img src="/images/arrowDown.png" alt="" className=" cursor-pointer" />
+);
+
+export const QRCode = () => (
+  <img src="/images/qrCode.svg" alt="" className=" cursor-pointer m-auto" />
+);
+
 export const LinkIcon = () => (
-  <img src="/images/link.png" alt="" className=" cursor-pointer" />
+  <img
+    src="/images/link.png"
+    alt=""
+    className=" cursor-pointer max-h-[48px] max-w-[48px] min-h-[48px] min-w-[48px]"
+  />
 );
 export const ToolIcon = () => (
   <img src="/images/tool.png" alt="" className=" cursor-pointer" />
@@ -55,8 +67,14 @@ export const CancelIcon = () => (
   <img src="/images/cancel.png" alt="" className=" cursor-pointer" />
 );
 
-export const Notification = ({ current }: { current: number }) => (
-  <div className="relative">
+export const Notification = ({
+  current,
+  onClick,
+}: {
+  current: number;
+  onClick: React.MouseEventHandler<HTMLDivElement> | undefined;
+}) => (
+  <div className="relative" onClick={onClick}>
     <img src="/images/notification.png" alt="" className=" cursor-pointer" />
     <div className="absolute top-[-1px] right-[-1px] h-[16px] w-[16px] rounded-[50%] bg-orange-1 text-white text-[0.5rem] flex items-center justify-center">
       {current}

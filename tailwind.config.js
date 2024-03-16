@@ -11,6 +11,7 @@ module.exports = {
         "grey-2": "#4D4D4D",
         "grey-3": "#595959",
         "grey-4": "#B3B3B3",
+        "grey-5": "#F2F2F2",
         "black-1": "#1B1A1A",
         "black-2": "#101010",
         "black-3": "#404040",
@@ -22,6 +23,9 @@ module.exports = {
         "pending-text": "#584012",
         "failed-bg": "#F1BABA",
         "failed-text": "#6D1313",
+      },
+      boxShadow: {
+        "shadow-1": "0px 1px 1px 0px #0000000D",
       },
     },
   },

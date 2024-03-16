@@ -8,7 +8,7 @@ const WelcomeScreen = () => {
   return (
     <AuthLayout
       child={
-        <div className="w-[29.0625rem] lg:w-[36.33%] min-h-[100vh] bg-grey-1 p-[51px_25px]">
+        <div className="w-full md:w-[50.33%] lg:w-[45.33%] min-h-[100vh] bg-grey-1 p-[51px_25px]">
           <div className="flex justify-center">
             <Success />
           </div>

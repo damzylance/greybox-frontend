@@ -1,24 +1,37 @@
-import { Link } from "react-router-dom";
 import { Notification, UserLogo } from "../../components/icons/Icons";
 import AppLayout from "./AppLayout";
 import { useState } from "react";
-import { depositData } from "../../utils/Dummies";
+import { depositData, historyData, withdrawalData } from "../../utils/Dummies";
 import { DateHead, DetailsCard, QuickLink } from "../../components/Cards";
-import AllTransactionModal from "../../components/modals/AllTransactionModal";
+import { useNavigate } from "react-router-dom";
+import DepositOption from "../../components/modals/DepositOption";
+import WithdrawalOption from "../../components/modals/WithdrawalOption";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [tab, setTab] = useState<"deposits" | "withdrawals" | "history">(
     "deposits"
   );
+  const [openDepositOption, setOpenDepositOption] = useState<boolean>(false);
+  const [openWithdrawalOption, setOpenWithdrawalOption] =
+    useState<boolean>(false);
 
-  const [openAllTransaction, setOpenAllTransaction] = useState<boolean>(false);
+  const tabData =
+    tab === "deposits"
+      ? depositData
+      : tab === "withdrawals"
+      ? withdrawalData
+      : historyData;
 
   return (
     <AppLayout
       child={
-        <div className="w-[29.0625rem] lg:w-[36.33%] min-h-[100vh] bg-grey-2 p-[51px_25px]">
+        <div className="w-full md:w-[50.33%] lg:w-[45.33%] min-h-[100vh] bg-grey-2 p-[51px_25px]">
           <section className="w-full flex justify-between items-center">
-            <Notification current={2} />
+            <Notification
+              current={4}
+              onClick={() => navigate("/notifications")}
+            />
             <div>
               <p className="text-center text-[0.875rem] text-grey-1 leading-[18px]">
                 Welcome,
@@ -41,10 +54,16 @@ const Dashboard = () => {
             </div>
 
             <section className="w-full flex justify-center px-[51px] gap-x-[32px] mt-[15px]">
-              <QuickLink label="Deposit" link="" />
-              <QuickLink label="Send" link="" />
-              <QuickLink label="Receive" link="" />
-              <QuickLink label="Withdraw" link="" />
+              <QuickLink
+                label="Deposit"
+                onClick={() => setOpenDepositOption(true)}
+              />
+              <QuickLink label="Send" onClick={() => navigate("/send")} />
+              <QuickLink label="Receive" onClick={() => navigate("/receive")} />
+              <QuickLink
+                label="Withdraw"
+                onClick={() => setOpenWithdrawalOption(true)}
+              />
             </section>
           </section>
           <section className="bg-grey-1 rounded-[40px_40px_0px_0px] mt-[24px]">
@@ -83,12 +102,12 @@ const Dashboard = () => {
               </div>
               <button
                 className="text-[0.75rem] text-orange-1 leading-[18px] "
-                onClick={() => setOpenAllTransaction(true)}
+                onClick={() => navigate("/all-transactions")}
               >
                 View all
               </button>
             </div>
-            {depositData?.map((deposit) => {
+            {tabData?.map((deposit) => {
               return (
                 <div key={deposit.id}>
                   <DateHead date={deposit.date} />
@@ -108,10 +127,13 @@ const Dashboard = () => {
               );
             })}
           </section>
-
-          <AllTransactionModal
-            state={openAllTransaction}
-            onClose={() => setOpenAllTransaction(false)}
+          <DepositOption
+            state={openDepositOption}
+            onClose={() => setOpenDepositOption(false)}
+          />
+          <WithdrawalOption
+            state={openWithdrawalOption}
+            onClose={() => setOpenWithdrawalOption(false)}
           />
         </div>
       }

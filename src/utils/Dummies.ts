@@ -38,6 +38,96 @@ export const depositData = [
   },
 ];
 
+export const withdrawalData = [
+  {
+    id: 1,
+    date: "1/12/24",
+    details: [
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+    ],
+  },
+  {
+    id: 2,
+    date: "1/12/24",
+    details: [
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+    ],
+  },
+];
+
+export const historyData = [
+  {
+    id: 1,
+    date: "1/12/24",
+    details: [
+      {
+        label: "Local Transfer",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Transfer",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+    ],
+  },
+  {
+    id: 2,
+    date: "1/12/24",
+    details: [
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Withdrawal",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+      {
+        label: "Local Transfer",
+        time: "2:03 PM",
+        amount: "$2400",
+      },
+    ],
+  },
+];
+
 export const allTransactionData = [
   {
     id: 1,
@@ -98,5 +188,28 @@ export const allTransactionData = [
         status: "Success",
       },
     ],
+  },
+];
+
+export const notificationsData = [
+  {
+    text: "Scheduled maintenance | between  now and may 2020",
+    subText: "Lorem Ipsum is a dummy text...",
+    date: "18 Jan",
+  },
+  {
+    text: "Scheduled maintenance | between  now and may 2020",
+    subText: "Lorem Ipsum is a dummy text...",
+    date: "18 Jan",
+  },
+  {
+    text: "Scheduled maintenance | between  now and may 2020",
+    subText: "Lorem Ipsum is a dummy text...",
+    date: "18 Jan",
+  },
+  {
+    text: "Scheduled maintenance | between  now and may 2020",
+    subText: "Lorem Ipsum is a dummy text...",
+    date: "18 Jan",
   },
 ];

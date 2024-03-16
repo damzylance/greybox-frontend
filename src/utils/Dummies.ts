@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 export const depositData = [
   {
     id: 1,
@@ -213,3 +215,39 @@ export const notificationsData = [
     date: "18 Jan",
   },
 ];
+
+export const SettingsData = () => {
+  const navigate = useNavigate();
+  return [
+    {
+      text: "Welcome to Greybox",
+      subText: "Lorem Ipsum is a dummy text...",
+      onClick: () => navigate(""),
+    },
+    {
+      text: "Update Wallet Details",
+      subText: "Lorem Ipsum is a dummy text...",
+      onClick: () => navigate("/update-wallet-details"),
+    },
+    {
+      text: "Change Pin",
+      subText: "Lorem Ipsum is a dummy text...",
+      onClick: () => navigate(""),
+    },
+    {
+      text: "Export Private Key",
+      subText: "Lorem Ipsum is a dummy text...",
+      onClick: () => navigate(""),
+    },
+    {
+      text: "About Greybox",
+      subText: "Lorem Ipsum is a dummy text...",
+      onClick: () => navigate("/about-greybox"),
+    },
+    {
+      text: "Sign Out",
+      subText: "Lorem Ipsum is a dummy text...",
+      onClick: () => navigate("/"),
+    },
+  ];
+};

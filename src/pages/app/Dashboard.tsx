@@ -40,7 +40,10 @@ const Dashboard = () => {
                 Lorem Ipsum
               </p>
             </div>
-            <UserLogo firstCharacterOfName="A" />
+            <UserLogo
+              firstCharacterOfName="A"
+              onClick={() => navigate("/settings")}
+            />
           </section>
           <section className="w-full pb-[21px] bg-grey-3 rounded-[40px] mt-[59px]">
             <div className="w-full flex flex-col items-center py-[18px] gap-y-[10px] text-white bg-orange-1 rounded-[40px]">

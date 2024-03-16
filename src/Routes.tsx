@@ -15,6 +15,9 @@ import MobileMoneyWithdrawal from "./pages/app/MobileMoneyWithdrawal";
 import PaychantWithdrawal from "./pages/app/PaychantWithdrawal";
 import Notifications from "./pages/app/Notifications";
 import Receive from "./pages/app/Receive";
+import Settings from "./pages/app/Settings";
+import UpdateWallet from "./pages/app/UpdateWallet";
+import About from "./pages/app/About";
 
 export const routes = createBrowserRouter([
   {
@@ -80,5 +83,17 @@ export const routes = createBrowserRouter([
   {
     path: "/receive",
     element: <Receive />,
+  },
+  {
+    path: "/settings",
+    element: <Settings />,
+  },
+  {
+    path: "/update-wallet-details",
+    element: <UpdateWallet />,
+  },
+  {
+    path: "/about-greybox",
+    element: <About />,
   },
 ]);

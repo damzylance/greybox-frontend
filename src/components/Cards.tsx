@@ -1,4 +1,4 @@
-import { LinkIcon, ToolIcon } from "./icons/Icons";
+import { ArrowForward, LinkIcon, ToolIcon } from "./icons/Icons";
 
 export type MenuProps = {
   icon: React.ReactNode;
@@ -100,6 +100,33 @@ export const NotificationsCard = ({
       <div className="text-[0.75rem] leading-[12px] text-black-3 min-w-fit">
         {date}
       </div>
+    </div>
+  </section>
+);
+
+export const SettingsCard = ({
+  text,
+  subText,
+  onClick,
+}: {
+  text: string;
+  subText: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+}) => (
+  <section onClick={onClick} className="w-full p-[0px_24px]  cursor-pointer">
+    <div
+      className={` flex justify-between items-center px-[14px] gap-x-[55px] `}
+    >
+      <div className="flex items-center gap-x-[16px]">
+        <ToolIcon />
+        <div className="flex flex-col gap-y-[6px]">
+          <p className="text-[0.875rem] leading-[18px] text-black-2">{text}</p>
+          <p className="text-[0.75rem] leading-[12px] text-black-3">
+            {subText}
+          </p>
+        </div>
+      </div>
+      <ArrowForward />
     </div>
   </section>
 );

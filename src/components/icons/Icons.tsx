@@ -47,6 +47,9 @@ export const More = () => (
 export const DropDown = () => (
   <img src="/images/arrowDown.png" alt="" className=" cursor-pointer" />
 );
+export const ArrowForward = () => (
+  <img src="/images/arrowForward.png" alt="" className=" cursor-pointer" />
+);
 
 export const QRCode = () => (
   <img src="/images/qrCode.svg" alt="" className=" cursor-pointer m-auto" />
@@ -67,6 +70,21 @@ export const CancelIcon = () => (
   <img src="/images/cancel.png" alt="" className=" cursor-pointer" />
 );
 
+export const CancelIconWhite = () => (
+  <img src="/images/cancelWhite.png" alt="" className=" cursor-pointer" />
+);
+export const CopyWhite = () => (
+  <img src="/images/copyWhite.png" alt="" className=" cursor-pointer" />
+);
+
+export const UserPicture = () => (
+  <img
+    src="/images/user.svg"
+    alt=""
+    className=" cursor-pointer w-[80px] h-[80px]"
+  />
+);
+
 export const Notification = ({
   current,
   onClick,
@@ -84,10 +102,15 @@ export const Notification = ({
 
 export const UserLogo = ({
   firstCharacterOfName,
+  onClick,
 }: {
   firstCharacterOfName: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
 }) => (
-  <div className="h-[40px] w-[40px] rounded-[50%] bg-white text-orange-1 text-[1.5rem] flex items-center justify-center">
+  <div
+    className="h-[40px] w-[40px] rounded-[50%] bg-white text-orange-1 text-[1.5rem] flex items-center justify-center  cursor-pointer"
+    onClick={onClick}
+  >
     {firstCharacterOfName}
   </div>
 );

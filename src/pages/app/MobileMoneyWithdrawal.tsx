@@ -7,9 +7,14 @@ import {
   TextInput,
 } from "../../components/inputs/TextInput";
 import { FormButton } from "../../components/buttons/FormButton";
+import SelectBox from "../../components/modals/SelectBox";
+import { banksData } from "../../utils/Dummies";
+import { useState } from "react";
 
 const MobileMoneyWithdrawal = () => {
   const navigate = useNavigate();
+  const [bank, setBank] = useState<string>("");
+  const [openBank, setOpenBank] = useState<boolean>(false);
   return (
     <AppLayout
       child={
@@ -37,7 +42,10 @@ const MobileMoneyWithdrawal = () => {
                   placeholder="Select from saved bank account"
                   readOnly
                   type="text"
-                  onClick={() => {}}
+                  value={bank}
+                  onClick={() => {
+                    setOpenBank(true);
+                  }}
                   img={<DropDown />}
                 />
               </div>
@@ -60,6 +68,14 @@ const MobileMoneyWithdrawal = () => {
               label="Submit Request"
               extraClass="mt-[80px]"
               onClick={() => {}}
+            />
+            <SelectBox
+              state={openBank}
+              title="Select Bank"
+              placeholder="Search Bank"
+              childList={banksData}
+              onPickChild={(name) => setBank(name)}
+              onClose={() => setOpenBank(false)}
             />
           </form>
         </div>

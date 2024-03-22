@@ -1,11 +1,22 @@
 import AuthLayout from "./AuthLayout";
 import { BackArrow } from "../../components/icons/Icons";
-import { TextInput } from "../../components/inputs/TextInput";
 import { Link, useNavigate } from "react-router-dom";
 import { FormButton } from "../../components/buttons/FormButton";
+import { useState } from "react";
 
 const VerifyOtp = () => {
   const navigate = useNavigate();
+  const [otp, setOtp] = useState(new Array(4).fill(""));
+
+  const handleChange = (element: any, index: number) => {
+    if (isNaN(element.value)) return false;
+    setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
+    console.log(otp);
+    if (element.nextSibling) {
+      element.nextSibling.focus();
+    }
+  };
+
   return (
     <AuthLayout
       child={
@@ -18,31 +29,23 @@ const VerifyOtp = () => {
             Enter the 4-digit code sent to you at +234-8209-2798
           </p>
           <form className="mt-[24px]">
-            <section className="flex gap-x-[17px] mt-[24px] ">
-              <TextInput
-                placeholder="1"
-                type="text"
-                isSmall
-                onChange={() => {}}
-              />
-              <TextInput
-                placeholder="2"
-                type="text"
-                isSmall
-                onChange={() => {}}
-              />
-              <TextInput
-                placeholder="3"
-                type="text"
-                isSmall
-                onChange={() => {}}
-              />
-              <TextInput
-                placeholder="4"
-                type="text"
-                isSmall
-                onChange={() => {}}
-              />
+            <section className="flex gap-x-[17px] mt-[24px] w-full">
+              {otp.map((data, index) => {
+                return (
+                  <input
+                    name="otp"
+                    maxLength={1}
+                    key={index}
+                    value={data}
+                    pattern="[0-9]"
+                    required
+                    onChange={(e) => handleChange(e.target, index)}
+                    onFocus={(e) => e.target.select()}
+                    className=" w-[24%] h-[48px] p-[11px_9.5%] text-black-3 placeholder:text-black-3 text-[0.875rem] leading-[18px] border-[#99999961] border-[1px] gap-x-[5px] shadow-shadow-1 rounded-[8px] outline-none"
+                    autoFocus={index === 0}
+                  />
+                );
+              })}
             </section>
 
             <FormButton

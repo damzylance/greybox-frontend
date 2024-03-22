@@ -85,6 +85,18 @@ export const UserPicture = () => (
   />
 );
 
+export const GHFlag = () => (
+  <img src="/images/ghFlag.png" alt="" className=" w-[12px] h-[9.29px]" />
+);
+
+export const NGFlag = () => (
+  <img src="/images/ngFlag.png" alt="" className=" w-[12px] h-[9.29px]" />
+);
+
+export const USFlag = () => (
+  <img src="/images/usFlag.png" alt="" className=" w-[12px] h-[9.29px]" />
+);
+
 export const Notification = ({
   current,
   onClick,

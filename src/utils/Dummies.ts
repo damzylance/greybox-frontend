@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { GHFlag, NGFlag, USFlag } from "../components/icons/Icons";
 
 export const depositData = [
   {
@@ -251,3 +252,51 @@ export const SettingsData = () => {
     },
   ];
 };
+
+export const banksData = [
+  {
+    name: "First Bank of Nigeria",
+  },
+  {
+    name: "United Bank for Africa",
+  },
+  {
+    name: "Zenith Bank PLC",
+  },
+  {
+    name: "Kuda Bank",
+  },
+];
+
+export const countryData = [
+  {
+    name: "Ghana",
+    logo: GHFlag(),
+  },
+  {
+    name: "Nigeria",
+    logo: NGFlag(),
+  },
+  {
+    name: "United States of America",
+    logo: USFlag(),
+  },
+];
+
+export const currencyData = [
+  {
+    name: "Ghanaian Cedi",
+    logo: GHFlag(),
+    code: "GHS",
+  },
+  {
+    name: "Nigerian Naira",
+    logo: NGFlag(),
+    code: "NGN",
+  },
+  {
+    name: "United States Dollar",
+    logo: USFlag(),
+    code: "USD",
+  },
+];

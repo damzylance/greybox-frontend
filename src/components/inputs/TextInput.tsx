@@ -1,23 +1,12 @@
-import React from "react";
-type FormFieldProps = {
-  placeholder: string;
-  readOnly?: boolean;
-  type: string;
-  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
-  onClick?: React.MouseEventHandler<HTMLInputElement> | undefined;
+interface FormFieldProps
+  extends React.DetailedHTMLProps<
+    React.InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
   img?: React.ReactNode;
   isSmall?: boolean;
-};
-export const TextInput = ({
-  placeholder,
-  readOnly,
-  type,
-  onChange,
-  onClick,
-  img,
-  isSmall,
-  ...props
-}: FormFieldProps) => {
+}
+export const TextInput = ({ img, isSmall, ...props }: FormFieldProps) => {
   return (
     <div
       className={`h-[48px] ${
@@ -25,11 +14,6 @@ export const TextInput = ({
       } rounded-[8px]  flex items-center border-[#99999961] border-[1px] gap-x-[5px] shadow-shadow-1`}
     >
       <input
-        type={type}
-        placeholder={placeholder}
-        readOnly={readOnly}
-        onChange={onChange}
-        onClick={onClick}
         {...props}
         className={`flex-grow w-[24%] h-[90%] text-black-3 placeholder:text-black-3 text-[0.875rem] leading-[18px]  bg-transparent outline-none ${
           isSmall ? "flex items-center justify-center px-0" : "px-[5px]"

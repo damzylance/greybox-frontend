@@ -7,9 +7,19 @@ import {
   TextInput,
 } from "../../components/inputs/TextInput";
 import { FormButton } from "../../components/buttons/FormButton";
+import SelectBox from "../../components/modals/SelectBox";
+import { banksData, currencyData } from "../../utils/Dummies";
+import { useState } from "react";
 
-const Send = () => {
+const SendMobile = () => {
   const navigate = useNavigate();
+
+  const [bank, setBank] = useState<string>("");
+  const [openBank, setOpenBank] = useState<boolean>(false);
+
+  const [currency, setCurrency] = useState<string>("");
+  const [openCurrency, setOpenCurrency] = useState<boolean>(false);
+
   return (
     <AppLayout
       child={
@@ -24,25 +34,20 @@ const Send = () => {
           <form className="mt-[29px] px-[24px] pb-[80px]">
             <section className="flex flex-col gap-y-[32px]">
               <div>
-                <InputLabel text="Recipients Name" />
-                <TextInput
-                  placeholder="Enter official recipient name"
-                  type="text"
-                  onChange={() => {}}
-                />
-              </div>
-              <div>
                 <InputLabel text="Recipients Bank" />
                 <TextInput
                   placeholder="Select bank"
                   readOnly
                   type="text"
-                  onClick={() => {}}
+                  value={bank}
+                  onClick={() => {
+                    setOpenBank(true);
+                  }}
                   img={<DropDown />}
                 />
               </div>
               <div>
-                <InputLabel text="Recipients Account number/Phone number" />
+                <InputLabel text="Recipients Account number" />
                 <TextInput
                   placeholder="Enter recipient Account number or phone number"
                   type="text"
@@ -55,7 +60,10 @@ const Send = () => {
                   placeholder="Select currency"
                   readOnly
                   type="text"
-                  onClick={() => {}}
+                  value={currency}
+                  onClick={() => {
+                    setOpenCurrency(true);
+                  }}
                   img={<DropDown />}
                 />
               </div>
@@ -79,6 +87,22 @@ const Send = () => {
               extraClass="mt-[80px]"
               onClick={() => {}}
             />
+            <SelectBox
+              state={openBank}
+              title="Select Bank"
+              placeholder="Search Bank"
+              childList={banksData}
+              onPickChild={(name) => setBank(name)}
+              onClose={() => setOpenBank(false)}
+            />
+            <SelectBox
+              state={openCurrency}
+              title="Select Currency"
+              placeholder="Search Currency"
+              childList={currencyData}
+              onPickChild={(name) => setCurrency(name)}
+              onClose={() => setOpenCurrency(false)}
+            />
           </form>
         </div>
       }
@@ -86,4 +110,4 @@ const Send = () => {
   );
 };
 
-export default Send;
+export default SendMobile;

@@ -9,9 +9,16 @@ import {
 import { TextInput } from "../../components/inputs/TextInput";
 import { Link, useNavigate } from "react-router-dom";
 import { FormButton } from "../../components/buttons/FormButton";
+import { useState } from "react";
+import SelectBox from "../../components/modals/SelectBox";
+import { countryData, currencyData } from "../../utils/Dummies";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const [openCurrency, setOpenCurrency] = useState<boolean>(false);
+  const [openCountry, setOpenCountry] = useState<boolean>(false);
+  const [country, setCountry] = useState<string>("");
+  const [currency, setCurrency] = useState<string>("");
 
   return (
     <AuthLayout
@@ -42,15 +49,21 @@ const SignUp = () => {
                 placeholder="Currency"
                 readOnly
                 type="text"
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenCurrency(true);
+                }}
                 img={<DropDown />}
+                value={currency}
               />
               <TextInput
                 placeholder="Country"
                 readOnly
                 type="text"
-                onClick={() => {}}
+                onClick={() => {
+                  setOpenCountry(true);
+                }}
                 img={<DropDown />}
+                value={country}
               />
               <TextInput
                 placeholder="Password"
@@ -78,6 +91,23 @@ const SignUp = () => {
                 Login here &gt;
               </Link>
             </section>
+
+            <SelectBox
+              state={openCurrency}
+              title="Select Currency"
+              placeholder="Search Currency"
+              childList={currencyData}
+              onPickChild={(name) => setCurrency(name)}
+              onClose={() => setOpenCurrency(false)}
+            />
+            <SelectBox
+              state={openCountry}
+              title="Select Country"
+              placeholder="Search Country"
+              childList={countryData}
+              onPickChild={(name) => setCountry(name)}
+              onClose={() => setOpenCountry(false)}
+            />
           </form>
         </div>
       }

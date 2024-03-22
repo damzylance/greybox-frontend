@@ -4,17 +4,12 @@ import { useState } from "react";
 import { depositData, historyData, withdrawalData } from "../../utils/Dummies";
 import { DateHead, DetailsCard, QuickLink } from "../../components/Cards";
 import { useNavigate } from "react-router-dom";
-import DepositOption from "../../components/modals/DepositOption";
-import WithdrawalOption from "../../components/modals/WithdrawalOption";
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const [tab, setTab] = useState<"deposits" | "withdrawals" | "history">(
     "deposits"
   );
-  const [openDepositOption, setOpenDepositOption] = useState<boolean>(false);
-  const [openWithdrawalOption, setOpenWithdrawalOption] =
-    useState<boolean>(false);
 
   const tabData =
     tab === "deposits"
@@ -59,25 +54,28 @@ const Dashboard = () => {
             <section className="w-full flex justify-center px-[51px] gap-x-[32px] mt-[15px]">
               <QuickLink
                 label="Deposit"
-                onClick={() => setOpenDepositOption(true)}
+                onClick={() => navigate("/deposit-options")}
               />
-              <QuickLink label="Send" onClick={() => navigate("/send")} />
+              <QuickLink
+                label="Send"
+                onClick={() => navigate("/send-options")}
+              />
               <QuickLink label="Receive" onClick={() => navigate("/receive")} />
               <QuickLink
                 label="Withdraw"
-                onClick={() => setOpenWithdrawalOption(true)}
+                onClick={() => navigate("/withdrawal-options")}
               />
             </section>
           </section>
           <section className="bg-grey-1 rounded-[40px_40px_0px_0px] mt-[24px]">
             <div className=" pt-[34px] mx-[23px] border-b-[2px] border-b-grey-4 flex items-center justify-between">
-              <div className="flex items-center gap-x-[24px]">
+              <div className="flex items-center gap-x-[10px] md:gap-x-[24px]">
                 <button
                   className={`${
                     tab === "deposits"
                       ? "border-b-orange-1 border-b-[2px]  font-[700] text-black-2  "
                       : "font-[400] text-black-3"
-                  } text-[0.875rem] mb-[-2px] pr-[5px] leading-[18px] transition-all duration-300 ease-in-out  `}
+                  } text-[0.875rem] md:mb-[-2px] pr-[5px] leading-[18px] transition-all duration-300 ease-in-out  `}
                   onClick={() => setTab("deposits")}
                 >
                   Deposits
@@ -87,7 +85,7 @@ const Dashboard = () => {
                     tab === "withdrawals"
                       ? "border-b-orange-1 border-b-[2px]  font-[700] text-black-2  "
                       : "font-[400] text-black-3"
-                  } text-[0.875rem] mb-[-2px] pr-[5px] leading-[18px] transition-all duration-300 ease-in-out  `}
+                  } text-[0.875rem] md:mb-[-2px] pr-[5px] leading-[18px] transition-all duration-300 ease-in-out  `}
                   onClick={() => setTab("withdrawals")}
                 >
                   Withdrawals
@@ -97,14 +95,14 @@ const Dashboard = () => {
                     tab === "history"
                       ? "border-b-orange-1 border-b-[2px]  font-[700] text-black-2  "
                       : "font-[400] text-black-3"
-                  } text-[0.875rem] mb-[-2px] pr-[5px] leading-[18px] transition-all duration-300 ease-in-out  `}
+                  } text-[0.875rem] md:mb-[-2px] pr-[5px] leading-[18px] transition-all duration-300 ease-in-out  `}
                   onClick={() => setTab("history")}
                 >
                   History
                 </button>
               </div>
               <button
-                className="text-[0.75rem] text-orange-1 leading-[18px] "
+                className="text-[0.75rem] text-orange-1 leading-[18px] min-w-fit"
                 onClick={() => navigate("/all-transactions")}
               >
                 View all
@@ -130,14 +128,6 @@ const Dashboard = () => {
               );
             })}
           </section>
-          <DepositOption
-            state={openDepositOption}
-            onClose={() => setOpenDepositOption(false)}
-          />
-          <WithdrawalOption
-            state={openWithdrawalOption}
-            onClose={() => setOpenWithdrawalOption(false)}
-          />
         </div>
       }
     />

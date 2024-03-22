@@ -8,7 +8,6 @@ import LockScreen from "./pages/auth/LockScreen";
 import WelcomeScreen from "./pages/auth/WelcomeScreen";
 import Dashboard from "./pages/app/Dashboard";
 import AllTransaction from "./pages/app/AllTransaction";
-import Send from "./pages/app/Send";
 import MobileMoneyDeposit from "./pages/app/MobileMoneyDeposit";
 import PaychantDeposit from "./pages/app/PaychantDeposit";
 import MobileMoneyWithdrawal from "./pages/app/MobileMoneyWithdrawal";
@@ -18,6 +17,11 @@ import Receive from "./pages/app/Receive";
 import Settings from "./pages/app/Settings";
 import UpdateWallet from "./pages/app/UpdateWallet";
 import About from "./pages/app/About";
+import WithdrawalOption from "./pages/app/WithdrawalOption";
+import DepositOption from "./pages/app/DepositOption";
+import SendBank from "./pages/app/SendBank";
+import SendOption from "./pages/app/SendOption";
+import SendMobileMoney from "./pages/app/SendMobileMoney";
 
 export const routes = createBrowserRouter([
   {
@@ -57,8 +61,20 @@ export const routes = createBrowserRouter([
     element: <AllTransaction />,
   },
   {
-    path: "/send",
-    element: <Send />,
+    path: "/send-options",
+    element: <SendOption />,
+  },
+  {
+    path: "/send-via-bank",
+    element: <SendBank />,
+  },
+  {
+    path: "/send-via-mobile-money",
+    element: <SendMobileMoney />,
+  },
+  {
+    path: "/deposit-options",
+    element: <DepositOption />,
   },
   {
     path: "/deposit-via-mobile-money",
@@ -67,6 +83,10 @@ export const routes = createBrowserRouter([
   {
     path: "/deposit-via-paychant",
     element: <PaychantDeposit />,
+  },
+  {
+    path: "/withdrawal-options",
+    element: <WithdrawalOption />,
   },
   {
     path: "/withdraw-via-mobile-money",

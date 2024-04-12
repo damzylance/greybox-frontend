@@ -14,7 +14,9 @@ const PaychantDeposit = () => {
             <span className="absolute left-[24px]" onClick={() => navigate(-1)}>
               <CancelIcon />
             </span>
-            <h2 className=" text-black text-[1.5rem] font-[600]">Deposit</h2>
+            <h2 className=" text-black text-[1.5rem] font-[600]">
+              Deposit Via Paychant
+            </h2>
           </div>
           <form className="mt-[29px] px-[24px] pb-[80px]">
             <section className="flex flex-col gap-y-[32px]">

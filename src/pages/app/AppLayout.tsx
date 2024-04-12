@@ -14,7 +14,11 @@ const AppLayout = ({ child }: { child: React.ReactNode }) => {
           label="Home"
           onClick={() => navigate("/dashboard")}
         />
-        <Menu icon={<Send />} label="Send" onClick={() => navigate("/send")} />
+        <Menu
+          icon={<Send />}
+          label="Send"
+          onClick={() => navigate("/send-options")}
+        />
         <Menu icon={<Cards />} label="Cards" onClick={() => navigate("")} />
         <Menu icon={<Wallet />} label="Wallet" onClick={() => navigate("")} />
         <Menu icon={<More />} label="More" onClick={() => navigate("")} />

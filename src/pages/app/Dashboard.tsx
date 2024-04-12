@@ -1,4 +1,10 @@
-import { Notification, UserLogo } from "../../components/icons/Icons";
+import {
+  Deposit,
+  Notification,
+  SendQ,
+  UserLogo,
+  Withdraw,
+} from "../../components/icons/Icons";
 import AppLayout from "./AppLayout";
 import { useState } from "react";
 import { depositData, historyData, withdrawalData } from "../../utils/Dummies";
@@ -51,17 +57,20 @@ const Dashboard = () => {
               </p>
             </div>
 
-            <section className="w-full flex justify-center px-[51px] gap-x-[32px] mt-[15px]">
+            <section className="w-full flex justify-between md:justify-center px-[51px] md:gap-x-[55px] mt-[15px]">
               <QuickLink
+                icon={<Deposit />}
                 label="Deposit"
                 onClick={() => navigate("/deposit-options")}
               />
               <QuickLink
+                icon={<SendQ />}
                 label="Send"
                 onClick={() => navigate("/send-options")}
               />
-              <QuickLink label="Receive" onClick={() => navigate("/receive")} />
+
               <QuickLink
+                icon={<Withdraw />}
                 label="Withdraw"
                 onClick={() => navigate("/withdrawal-options")}
               />

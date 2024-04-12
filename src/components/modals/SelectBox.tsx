@@ -40,6 +40,7 @@ const SelectBox = ({
           className="w-full h-[48px] p-[15px_24px] rounded-[8px] bg-grey-1 text-[#999999] text-[0.875rem] placeholder:text-[#999999] border-[1px] border-[#999999] shadow-sm mt-[24px] mb-[30px] outline-none"
           onChange={(e) => setSearchValue(e.target.value)}
           autoFocus={true}
+          onFocus={() => setSearchValue("")}
         />
         <section className="flex flex-col gap-y-[8px]">
           {childList

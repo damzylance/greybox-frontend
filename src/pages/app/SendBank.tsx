@@ -28,13 +28,15 @@ const SendBank = () => {
             <span className="absolute left-[24px]" onClick={() => navigate(-1)}>
               <CancelIcon />
             </span>{" "}
-            <h2 className=" text-black text-[1.5rem] font-[600]">Send</h2>
+            <h2 className=" text-black text-[1.5rem] font-[600]">
+              Send Via Bank
+            </h2>
           </div>
           <p className="text-black-3 text-[0.75rem] text-center">(Bal $0.00)</p>
           <form className="mt-[29px] px-[24px] pb-[80px]">
             <section className="flex flex-col gap-y-[32px]">
               <div>
-                <InputLabel text="Recipients Bank" />
+                <InputLabel text="Select Bank Account" />
                 <TextInput
                   placeholder="Select bank"
                   readOnly
@@ -44,14 +46,6 @@ const SendBank = () => {
                     setOpenBank(true);
                   }}
                   img={<DropDown />}
-                />
-              </div>
-              <div>
-                <InputLabel text="Recipients Account number" />
-                <TextInput
-                  placeholder="Enter recipient Account number or phone number"
-                  type="text"
-                  onChange={() => {}}
                 />
               </div>
               <div>
@@ -83,7 +77,7 @@ const SendBank = () => {
               </div>
             </section>
             <FormButton
-              label="Submit Request"
+              label="Send"
               extraClass="mt-[80px]"
               onClick={() => {}}
             />

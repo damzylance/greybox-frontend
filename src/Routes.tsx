@@ -13,7 +13,6 @@ import PaychantDeposit from "./pages/app/PaychantDeposit";
 import MobileMoneyWithdrawal from "./pages/app/MobileMoneyWithdrawal";
 import PaychantWithdrawal from "./pages/app/PaychantWithdrawal";
 import Notifications from "./pages/app/Notifications";
-import Receive from "./pages/app/Receive";
 import Settings from "./pages/app/Settings";
 import UpdateWallet from "./pages/app/UpdateWallet";
 import About from "./pages/app/About";
@@ -22,6 +21,10 @@ import DepositOption from "./pages/app/DepositOption";
 import SendBank from "./pages/app/SendBank";
 import SendOption from "./pages/app/SendOption";
 import SendMobileMoney from "./pages/app/SendMobileMoney";
+import ExchangeDeposit from "./pages/app/ExchangeDeposit";
+import ChangePassCode from "./pages/app/ChangePassCode";
+import NewPassCode from "./pages/app/NewPassCode";
+import PaymentDetails from "./pages/app/PaymentDetails";
 
 export const routes = createBrowserRouter([
   {
@@ -85,6 +88,10 @@ export const routes = createBrowserRouter([
     element: <PaychantDeposit />,
   },
   {
+    path: "/deposit-via-exchange",
+    element: <ExchangeDeposit />,
+  },
+  {
     path: "/withdrawal-options",
     element: <WithdrawalOption />,
   },
@@ -101,10 +108,6 @@ export const routes = createBrowserRouter([
     element: <Notifications />,
   },
   {
-    path: "/receive",
-    element: <Receive />,
-  },
-  {
     path: "/settings",
     element: <Settings />,
   },
@@ -113,7 +116,19 @@ export const routes = createBrowserRouter([
     element: <UpdateWallet />,
   },
   {
+    path: "/change-passcode",
+    element: <ChangePassCode />,
+  },
+  {
+    path: "/new-passcode",
+    element: <NewPassCode />,
+  },
+  {
     path: "/about-greybox",
     element: <About />,
+  },
+  {
+    path: "/payment-details",
+    element: <PaymentDetails />,
   },
 ]);

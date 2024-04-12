@@ -15,7 +15,9 @@ export const BackArrow = () => {
 export const Mail = () => (
   <img src="/images/mail.png" alt="" className=" cursor-pointer" />
 );
-
+export const LockIcon = () => (
+  <img src="/images/lock.png" alt="" className=" cursor-pointer" />
+);
 export const LockOpen = () => (
   <img src="/images/lockOpen.png" alt="" className=" cursor-pointer" />
 );
@@ -28,8 +30,61 @@ export const Success = () => (
 export const Home = () => (
   <img src="/images/home.png" alt="" className=" cursor-pointer" />
 );
+
+export const WelcomeIcon = () => (
+  <img src="/images/welcome.png" alt="" className=" cursor-pointer" />
+);
+
+export const UpdateWalletIcon = () => (
+  <img src="/images/updateWallet.png" alt="" className=" cursor-pointer" />
+);
+
+export const ChangePinIcon = () => (
+  <img src="/images/changePin.png" alt="" className=" cursor-pointer" />
+);
+
+export const DeleteIcon = ({
+  onClick,
+}: {
+  onClick: React.MouseEventHandler<HTMLImageElement> | undefined;
+}) => (
+  <img
+    src="/images/delete.png"
+    alt=""
+    className=" cursor-pointer"
+    onClick={onClick}
+  />
+);
+
+export const PlusWhiteIcon = () => (
+  <img src="/images/plusWhite.png" alt="" className=" cursor-pointer" />
+);
+
+export const PaymentDetailsIcon = () => (
+  <img src="/images/paymentDetails.png" alt="" className=" cursor-pointer" />
+);
+
+export const AboutIcon = () => (
+  <img src="/images/about.png" alt="" className=" cursor-pointer" />
+);
+
+export const SignOutIcon = () => (
+  <img src="/images/signOut.png" alt="" className=" cursor-pointer" />
+);
 export const Send = () => (
   <img src="/images/send.png" alt="" className=" cursor-pointer" />
+);
+
+export const SendQ = () => (
+  <img src="/images/sendq.png" alt="" className=" cursor-pointer" />
+);
+
+export const Deposit = () => (
+  <img src="/images/deposit.png" alt="" className=" cursor-pointer" />
+);
+
+export const Withdraw = () => (
+  <img src="/images/withdraw.png" alt="" className=" cursor-pointer" />
 );
 
 export const Cards = () => (
@@ -64,6 +119,10 @@ export const LinkIcon = () => (
 );
 export const ToolIcon = () => (
   <img src="/images/tool.png" alt="" className=" cursor-pointer" />
+);
+
+export const TransferIcon = () => (
+  <img src="/images/transfer.png" alt="" className=" cursor-pointer" />
 );
 
 export const CancelIcon = () => (

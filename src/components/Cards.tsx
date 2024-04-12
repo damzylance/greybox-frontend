@@ -1,4 +1,9 @@
-import { ArrowForward, LinkIcon, ToolIcon } from "./icons/Icons";
+import {
+  ArrowForward,
+  DeleteIcon,
+  ToolIcon,
+  TransferIcon,
+} from "./icons/Icons";
 
 export type MenuProps = {
   icon: React.ReactNode;
@@ -14,16 +19,18 @@ export const Menu = ({ icon, label, onClick }: MenuProps) => (
 export const QuickLink = ({
   label,
   onClick,
+  icon,
 }: {
   label: string;
   onClick: React.MouseEventHandler<HTMLDivElement> | undefined;
+  icon: React.ReactNode;
 }) => {
   return (
     <div
       onClick={onClick}
       className="flex flex-col items-center gap-y-[8px] cursor-pointer"
     >
-      <LinkIcon />
+      {icon}
       <p className="text-[0.875rem] text-white font-[700] leading-[18px] text-center">
         {label}
       </p>
@@ -62,13 +69,33 @@ export const DetailsCard = ({
       } flex justify-between py-[14px] `}
     >
       <div className="flex items-center gap-x-[16px]">
-        <ToolIcon />
+        <TransferIcon />
         <div>
           <p className="text-[0.875rem] leading-[18px] text-black-2">{label}</p>
           <p className="text-[0.75rem] leading-[12px] text-black-3">{time}</p>
         </div>
       </div>
       <div className="text-[0.75rem] leading-[12px] text-black-3">{amount}</div>
+    </div>
+  </section>
+);
+
+export const PaymentDetailsCard = ({
+  text,
+  subText,
+  deleteFunc,
+}: {
+  text: string;
+  subText: string;
+  deleteFunc: React.MouseEventHandler<HTMLImageElement> | undefined;
+}) => (
+  <section className="w-full p-[24px_16px] bg-[transparent] cursor-pointer rounded-[4px] border-[1px] border-[#999999]">
+    <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-x-[16px]">
+        <p className="text-[0.875rem] leading-[18px] text-black-2">{text}</p>
+        <p className="text-[0.75rem] leading-[12px] text-black-3">{subText}</p>
+      </div>
+      <DeleteIcon onClick={deleteFunc} />
     </div>
   </section>
 );
@@ -108,17 +135,19 @@ export const SettingsCard = ({
   text,
   subText,
   onClick,
+  icon,
 }: {
   text: string;
   subText: string;
   onClick?: React.MouseEventHandler<HTMLDivElement> | undefined;
+  icon: React.ReactNode;
 }) => (
   <section onClick={onClick} className="w-full p-[0px_24px]  cursor-pointer">
     <div
       className={` flex justify-between items-center px-[14px] gap-x-[55px] `}
     >
       <div className="flex items-center gap-x-[16px]">
-        <ToolIcon />
+        {icon}
         <div className="flex flex-col gap-y-[6px]">
           <p className="text-[0.875rem] leading-[18px] text-black-2">{text}</p>
           <p className="text-[0.75rem] leading-[12px] text-black-3">
@@ -160,7 +189,7 @@ export const TransactionHistoryCard = ({
       } flex justify-between py-[14px] `}
     >
       <div className="flex items-center gap-x-[16px]">
-        <ToolIcon />
+        <TransferIcon />
         <div className="flex flex-col gap-y-[12px]">
           <div className="flex items-center gap-x-[6px]">
             <span className="text-[0.875rem] leading-[18px] text-black-2">

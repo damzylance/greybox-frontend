@@ -267,6 +267,20 @@ export const banksData = [
     name: "Kuda Bank",
   },
 ];
+export const momoData = [
+  {
+    name: "Momo Agent 1",
+  },
+  {
+    name: "Momo Agent 2",
+  },
+  {
+    name: "Momo Agent 3",
+  },
+  {
+    name: "Momo Agent 4",
+  },
+];
 
 export const countryData = [
   {
@@ -285,12 +299,12 @@ export const countryData = [
 
 export const currencyData = [
   {
-    name: "Ghanaian Cedi",
+    name: "Ghana Cedi",
     logo: GHFlag(),
     code: "GHS",
   },
   {
-    name: "Nigerian Naira",
+    name: "Nigeria Naira",
     logo: NGFlag(),
     code: "NGN",
   },

@@ -23,7 +23,9 @@ const MobileMoneyDeposit = () => {
             <span className="absolute left-[24px]" onClick={() => navigate(-1)}>
               <CancelIcon />
             </span>
-            <h2 className=" text-black text-[1.5rem] font-[600]">Deposit</h2>
+            <h2 className=" text-black text-[1.5rem] font-[600]">
+              Deposit Via Mobile Money
+            </h2>
           </div>
           <p className="text-black-3 text-[0.75rem] text-center">(Bal $0.00)</p>
           <form className="mt-[29px] px-[24px] pb-[80px]">

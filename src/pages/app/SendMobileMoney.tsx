@@ -8,14 +8,14 @@ import {
 } from "../../components/inputs/TextInput";
 import { FormButton } from "../../components/buttons/FormButton";
 import SelectBox from "../../components/modals/SelectBox";
-import { banksData, currencyData } from "../../utils/Dummies";
+import { momoData, currencyData } from "../../utils/Dummies";
 import { useState } from "react";
 
 const SendMobile = () => {
   const navigate = useNavigate();
 
-  const [bank, setBank] = useState<string>("");
-  const [openBank, setOpenBank] = useState<boolean>(false);
+  const [momo, setMomo] = useState<string>("");
+  const [openMomo, setOpenMomo] = useState<boolean>(false);
 
   const [currency, setCurrency] = useState<string>("");
   const [openCurrency, setOpenCurrency] = useState<boolean>(false);
@@ -28,28 +28,30 @@ const SendMobile = () => {
             <span className="absolute left-[24px]" onClick={() => navigate(-1)}>
               <CancelIcon />
             </span>{" "}
-            <h2 className=" text-black text-[1.5rem] font-[600]">Send</h2>
+            <h2 className=" text-black text-[1.5rem] font-[600]">
+              Send Via Mobile Money
+            </h2>
           </div>
           <p className="text-black-3 text-[0.75rem] text-center">(Bal $0.00)</p>
           <form className="mt-[29px] px-[24px] pb-[80px]">
             <section className="flex flex-col gap-y-[32px]">
               <div>
-                <InputLabel text="Recipients Bank" />
+                <InputLabel text="Select MoMo" />
                 <TextInput
-                  placeholder="Select bank"
+                  placeholder="Select Momo"
                   readOnly
                   type="text"
-                  value={bank}
+                  value={momo}
                   onClick={() => {
-                    setOpenBank(true);
+                    setOpenMomo(true);
                   }}
                   img={<DropDown />}
                 />
               </div>
               <div>
-                <InputLabel text="Recipients Account number" />
+                <InputLabel text="Mobile Number" />
                 <TextInput
-                  placeholder="Enter recipient Account number or phone number"
+                  placeholder="Enter Mobile number"
                   type="text"
                   onChange={() => {}}
                 />
@@ -83,17 +85,17 @@ const SendMobile = () => {
               </div>
             </section>
             <FormButton
-              label="Submit Request"
+              label="Send"
               extraClass="mt-[80px]"
               onClick={() => {}}
             />
             <SelectBox
-              state={openBank}
-              title="Select Bank"
-              placeholder="Search Bank"
-              childList={banksData}
-              onPickChild={(name) => setBank(name)}
-              onClose={() => setOpenBank(false)}
+              state={openMomo}
+              title="Select Momo"
+              placeholder="Search Momo"
+              childList={momoData}
+              onPickChild={(name) => setMomo(name)}
+              onClose={() => setOpenMomo(false)}
             />
             <SelectBox
               state={openCurrency}

@@ -25,10 +25,15 @@ import ExchangeDeposit from "./pages/app/ExchangeDeposit";
 import ChangePassCode from "./pages/app/ChangePassCode";
 import NewPassCode from "./pages/app/NewPassCode";
 import PaymentDetails from "./pages/app/PaymentDetails";
+import Home from "./pages/app/home/Home";
 
 export const routes = createBrowserRouter([
   {
     path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/sign-in",
     element: <Login />,
   },
   {

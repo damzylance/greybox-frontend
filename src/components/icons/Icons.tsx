@@ -121,6 +121,22 @@ export const ToolIcon = () => (
   <img src="/images/tool.png" alt="" className=" cursor-pointer" />
 );
 
+export const CostIcon = () => (
+  <img src="/images/cost.svg" alt="" className=" cursor-pointer" />
+);
+
+export const StabilityIcon = () => (
+  <img src="/images/stability.svg" alt="" className=" cursor-pointer" />
+);
+
+export const SecurityIcon = () => (
+  <img src="/images/security.svg" alt="" className=" cursor-pointer" />
+);
+
+export const ComplianceIcon = () => (
+  <img src="/images/compliance.svg" alt="" className=" cursor-pointer" />
+);
+
 export const TransferIcon = () => (
   <img src="/images/transfer.png" alt="" className=" cursor-pointer" />
 );
@@ -143,6 +159,10 @@ export const UserPicture = () => (
     className=" cursor-pointer w-[80px] h-[80px]"
   />
 );
+export const IntroLady = () => <img src="/images/introLady.svg" alt="" />;
+export const AboutLady = () => <img src="/images/aboutLady.svg" alt="" />;
+export const ProcessGuy = () => <img src="/images/processGuy.svg" alt="" />;
+export const FiveStars = () => <img src="/images/fiveStars.svg" alt="" />;
 
 export const GHFlag = () => (
   <img src="/images/ghFlag.png" alt="" className=" w-[12px] h-[9.29px]" />

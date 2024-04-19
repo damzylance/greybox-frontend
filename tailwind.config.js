@@ -5,6 +5,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         "grey-box-bg": "url('./publicImages/grey-box-bg.png')",
+        "get-started-bg": "url('./publicImages/getStartedBg.png')",
+        "round-grey-bg": "url('./publicImages/roundGreyBg.png')",
       },
       colors: {
         "grey-1": "#D9D9D9",
@@ -17,6 +19,8 @@ module.exports = {
         "black-3": "#404040",
         "orange-1": "#CD5928",
         "orange-2": "#E49776",
+        "orange-3": "#F5D8CC",
+        "pink-1": "#FDF9F6",
         "success-bg": "#9EEDAA",
         "success-text": "#125814",
         "pending-bg": "#ECED9E",

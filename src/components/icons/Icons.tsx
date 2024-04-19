@@ -159,10 +159,19 @@ export const UserPicture = () => (
     className=" cursor-pointer w-[80px] h-[80px]"
   />
 );
+
+export const User1Picture = () => <img src="/images/user1.svg" alt="" />;
+
+export const User2Picture = () => <img src="/images/user2.svg" alt="" />;
+
+export const User3Picture = () => <img src="/images/user3.svg" alt="" />;
 export const IntroLady = () => <img src="/images/introLady.svg" alt="" />;
 export const AboutLady = () => <img src="/images/aboutLady.svg" alt="" />;
 export const ProcessGuy = () => <img src="/images/processGuy.svg" alt="" />;
 export const FiveStars = () => <img src="/images/fiveStars.svg" alt="" />;
+export const FiveStarsSmall = () => (
+  <img src="/images/fiveStarsSmall.svg" alt="" />
+);
 
 export const GHFlag = () => (
   <img src="/images/ghFlag.png" alt="" className=" w-[12px] h-[9.29px]" />

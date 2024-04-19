@@ -1,36 +1,41 @@
 import { useNavigate } from "react-router-dom";
-import { HomeButton } from "../../../components/buttons/HomeButton";
-import { IntroLady, ProcessGuy } from "../../../components/icons/Icons";
+import {
+  FiveStarsSmall,
+  User1Picture,
+  User2Picture,
+  User3Picture,
+} from "../../../components/icons/Icons";
 
 const Testimonials = () => {
   const navigate = useNavigate();
-  const ProcessCard = ({
-    sn,
-    text,
-    subText,
-    last,
+  const TestimonialsCard = ({
+    userImg,
+    userName,
+    comment,
+    right,
   }: {
-    sn: string;
-    text: string;
-    subText: string;
-    last?: boolean;
+    userImg: React.ReactNode;
+    userName: string;
+    comment: string;
+    right?: boolean;
   }) => (
-    <section>
-      <div className="flex items-center gap-x-[25px]">
-        <div className="min-w-[40.57px] h-[42px] rounded-[4px] bg-orange-3 flex items-center justify-center text-[1.25rem] text-orange-1 font-[700]">
-          {sn}
-        </div>
-        <div>
-          <p className="text-[1rem] text-black-2 font-[700] leading-[22px]">
-            {text}
+    <div
+      className={`w-[90%] flex items-center p-[14px_20px] gap-x-[28px] rounded-[8px] ${
+        right ? "bg-grey-5 self-end" : "bg-pink-1 self-start"
+      }`}
+    >
+      {!right && <div> {userImg}</div>}
+      <div>
+        <div className="flex items-center justify-between">
+          <p className="text-[1.125rem] text-black-2 font-[600] leading-[20px]">
+            {userName}
           </p>
-          <p className="text-[0.875rem] md:text-[1rem] text-black-3 leading-[22px] mt-[3px] text-nowrap">
-            {subText}
-          </p>
+          <FiveStarsSmall />
         </div>
+        <p className="text-[0.875rem] text-black-3 leading-[18px]">{comment}</p>
       </div>
-      {!last && <img src="/images/vLine.svg" alt="" className="ml-[19px]" />}
-    </section>
+      {right && <div> {userImg}</div>}
+    </div>
   );
   return (
     <section className="pb-[64px] pt-[130px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
@@ -49,8 +54,25 @@ const Testimonials = () => {
             cross-border payments and remittances.
           </p>
         </section>
-        <section className="w-[400px] h-[400px] flex justify-center m-[auto] bg-round-grey-bg bg-cover bg-no-repeat">
-          Testimonials
+        <section className=" bg-round-grey-bg bg-contain bg-no-repeat">
+          <div className="w-[400px] min-h-[400px] flex flex-col items-center justify-center gap-y-[27px]">
+            <TestimonialsCard
+              userImg={<User1Picture />}
+              userName="Lorem Ipsum"
+              comment="“Lorem ipsum is a dummy text, Lorem ipsum is a dummy text, Lorem ipsum is a dummy text”"
+            />
+            <TestimonialsCard
+              userImg={<User2Picture />}
+              userName="Lorem Ipsum"
+              comment="“Lorem ipsum is a dummy text, Lorem ipsum is a dummy text, Lorem ipsum is a dummy text”"
+              right
+            />
+            <TestimonialsCard
+              userImg={<User3Picture />}
+              userName="Lorem Ipsum"
+              comment="“Lorem ipsum is a dummy text, Lorem ipsum is a dummy text, Lorem ipsum is a dummy text”"
+            />
+          </div>
         </section>
       </div>
     </section>

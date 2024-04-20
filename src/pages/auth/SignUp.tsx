@@ -85,7 +85,7 @@ const SignUp = () => {
                 Already Have an Account?
               </p>
               <Link
-                to={"/"}
+                to={"/sign-in"}
                 className=" text-[0.875rem] text-orange-1 leading-[18px] font-[700]"
               >
                 Login here &gt;

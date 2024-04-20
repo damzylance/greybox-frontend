@@ -6,12 +6,12 @@ const About = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="md:py-[50px] pb-[50px] bg-white">
-      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-x-[2%]">
-        <section className="w-full md:w-[50%] flex justify-center px-[25px] md:pl-[10%] md:px-0">
+    <section className="pb-[100px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
+      <div className="w-full flex flex-col md:flex-row items-center gap-x-[2%]">
+        <section className="w-full md:w-[50%] flex justify-center md:justify-start ">
           <AboutLady />
         </section>
-        <section className="w-full md:w-[50%] px-[25px] md:pl-[25px] md:pr-[80px] flex flex-col md:block">
+        <section className="w-full md:w-[50%] flex flex-col md:block">
           <h2 className="text-[1.125rem] text-orange-1 font-[700] leading-[24.75px]">
             ABOUT US
           </h2>

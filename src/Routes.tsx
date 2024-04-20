@@ -26,6 +26,7 @@ import ChangePassCode from "./pages/app/ChangePassCode";
 import NewPassCode from "./pages/app/NewPassCode";
 import PaymentDetails from "./pages/app/PaymentDetails";
 import Home from "./pages/app/home/Home";
+import Contact from "./pages/app/Contact";
 
 export const routes = createBrowserRouter([
   {
@@ -131,6 +132,10 @@ export const routes = createBrowserRouter([
   {
     path: "/about-greybox",
     element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
   },
   {
     path: "/payment-details",

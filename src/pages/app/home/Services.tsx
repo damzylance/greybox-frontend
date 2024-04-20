@@ -30,7 +30,7 @@ const Services = () => {
     );
   };
   return (
-    <section className=" bg-white p-[75px_25px] md:p-[65px_75px]">
+    <section className=" pb-[100px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
       <h2 className="text-orange-1 text-center text-[1.125rem] font-[700] leading-[24.75px]">
         OUR SERVICES
       </h2>

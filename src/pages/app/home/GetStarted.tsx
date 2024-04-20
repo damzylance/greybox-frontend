@@ -13,7 +13,7 @@ const GetStarted = () => {
       <HomeButton
         label="Get Started"
         onClick={() => navigate("/sign-up")}
-        extraClass="w-[353px] bg-orange-1 text-white"
+        extraClass="w-full md:w-[353px] bg-orange-1 text-white"
       />
     </section>
   );

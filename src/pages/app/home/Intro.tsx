@@ -27,9 +27,9 @@ const Intro = () => {
     </div>
   );
   return (
-    <section className="pb-[50px] bg-pink-1">
+    <section className="pb-[100px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
       <div className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-x-[2%]">
-        <section className="w-full md:w-[50%] px-[25px] md:pl-[10%] md:px-0">
+        <section>
           <h2 className="max-w-[597px] text-[3rem] font-[700] leading-[66px]">
             Simplifying <span className=" text-orange-1">Cross-border </span>
             Payments in Africa
@@ -37,16 +37,16 @@ const Intro = () => {
           <p className="mt-[21px] text-[1.25rem] leading-[27.5px]">
             Move Money Across Borders Seamlessly
           </p>
-          <div className="mt-[78px] flex items-center gap-x-[28px]">
+          <div className="mt-[78px] flex flex-col md:flex-row md:items-center gap-[28px]">
             <HomeButton
               label="Learn More"
               onClick={() => {}}
-              extraClass="w-[225px] bg-[#fff] text-orange-1"
+              extraClass="w-full md:w-[225px] bg-[#fff] text-orange-1"
             />
             <HomeButton
               label="Get Started"
               onClick={() => navigate("/sign-up")}
-              extraClass="w-[225px] bg-orange-1 text-[#fff]"
+              extraClass="w-full md:w-[225px] bg-orange-1 text-[#fff]"
             />
           </div>
           <div className="mt-[108px] flex items-center gap-x-[32px]">
@@ -55,7 +55,7 @@ const Intro = () => {
             <Stat text="150k" subText="Lorem Ipsum" last />
           </div>
         </section>
-        <section className="w-full md:w-[50%]">
+        <section>
           <IntroLady />
         </section>
       </div>

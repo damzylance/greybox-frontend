@@ -1,9 +1,6 @@
-import { useNavigate } from "react-router-dom";
-import { HomeButton } from "../../../components/buttons/HomeButton";
-import { IntroLady, ProcessGuy } from "../../../components/icons/Icons";
+import { ProcessGuy } from "../../../components/icons/Icons";
 
 const Process = () => {
-  const navigate = useNavigate();
   const ProcessCard = ({
     sn,
     text,
@@ -16,7 +13,7 @@ const Process = () => {
     last?: boolean;
   }) => (
     <section>
-      <div className="flex items-center gap-x-[25px]">
+      <div className="flex items-center gap-x-[15px] md:gap-x-[25px]">
         <div className="min-w-[40.57px] h-[42px] rounded-[4px] bg-orange-3 flex items-center justify-center text-[1.25rem] text-orange-1 font-[700]">
           {sn}
         </div>
@@ -33,10 +30,10 @@ const Process = () => {
     </section>
   );
   return (
-    <section className="pb-[50px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
+    <section className="pb-[100px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
       <div className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-x-[2%]">
-        <section className="w-full md:w-[50%] ">
-          <h2 className="text-[1.125rem] text-orange-1 font-[700] leading-[24.75px]">
+        <section className="w-full md:w-[48%] ">
+          <h2 className="text-[1.125rem] text-orange-1 font-[700] leading-[24.75px] mt-[20px] md:mt-0">
             OUR PROCESS
           </h2>
           <p className="max-w-[456px] text-[2rem] text-black-2 font-[700] leading-[40.63px] mt-[12px] ">
@@ -61,7 +58,7 @@ const Process = () => {
             />
           </div>
         </section>
-        <section className="flex justify-center">
+        <section className="flex justify-center md:justify-start">
           <ProcessGuy />
         </section>
       </div>

@@ -18,7 +18,7 @@ const WhyChoose = () => {
     extraClass: string;
   }) => (
     <div
-      className={`p-[53px_15px] w-full md:w-[50%] lg:w-[230px] h-[222px] rounded-[8px] flex flex-col items-center ${extraClass}`}
+      className={`p-[53px_15px] w-full md:w-[50%] lg:w-[230px] xl:w-[260px] h-[222px] rounded-[8px] flex flex-col items-center ${extraClass}`}
     >
       {img}
       <p className="text-[1rem] text-black-2 text-center font-[700] leading-[22px] mt-[26px]">
@@ -30,7 +30,7 @@ const WhyChoose = () => {
     </div>
   );
   return (
-    <section className="p-[56px_25px] md:p-[56px_66px] bg-white">
+    <section className=" pb-[100px] px-[25px] md:px-[66px] bg-white">
       <h2 className="text-[1.125rem] text-orange-1 text-center font-[700] leading-[24.75px]">
         QUALITY SERVICES
       </h2>

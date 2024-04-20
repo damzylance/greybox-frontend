@@ -20,7 +20,7 @@ const Testimonials = () => {
     right?: boolean;
   }) => (
     <div
-      className={`w-[90%] flex items-center p-[14px_20px] gap-x-[28px] rounded-[8px] ${
+      className={`w-[85%] flex items-center p-[14px_20px] gap-x-[28px] rounded-[8px] ${
         right ? "bg-grey-5 self-end" : "bg-pink-1 self-start"
       }`}
     >
@@ -38,8 +38,8 @@ const Testimonials = () => {
     </div>
   );
   return (
-    <section className="pb-[64px] pt-[130px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
-      <div className="w-full flex flex-col-reverse md:flex-row items-center justify-center gap-x-[2%]">
+    <section className="pb-[100px] pt-[100px] bg-white px-[25px] md:px-[5%] lg:px-[10%]">
+      <div className="w-full flex flex-col md:flex-row items-center justify-center gap-x-[2%]">
         <section className="w-full md:w-[50%] ">
           <h2 className="text-[1.125rem] text-orange-1 font-[700] leading-[24.75px]">
             TESTIMONIALS
@@ -54,8 +54,8 @@ const Testimonials = () => {
             cross-border payments and remittances.
           </p>
         </section>
-        <section className=" bg-round-grey-bg bg-contain bg-no-repeat">
-          <div className="w-[400px] min-h-[400px] flex flex-col items-center justify-center gap-y-[27px]">
+        <section className=" bg-round-grey-bg bg-center bg-contain bg-no-repeat w-full md:w-[50%]">
+          <div className="w-full min-h-[400px] flex flex-col items-center justify-center gap-y-[27px]">
             <TestimonialsCard
               userImg={<User1Picture />}
               userName="Lorem Ipsum"

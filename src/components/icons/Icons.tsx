@@ -99,6 +99,37 @@ export const More = () => (
   <img src="/images/more.png" alt="" className=" cursor-pointer" />
 );
 
+export const FacebookIcon = () => (
+  <img src="/images/facebook.svg" alt="" className=" cursor-pointer" />
+);
+export const InstagramIcon = () => (
+  <img src="/images/instagram.svg" alt="" className=" cursor-pointer" />
+);
+
+export const TwitterIcon = () => (
+  <img src="/images/twitter.svg" alt="" className=" cursor-pointer" />
+);
+
+export const WhatsappIcon = () => (
+  <img src="/images/whatsapp.svg" alt="" className=" cursor-pointer" />
+);
+
+export const LocationIcon = () => (
+  <img src="/images/location.svg" alt="" className=" cursor-pointer" />
+);
+
+export const MailFIcon = () => (
+  <img src="/images/mailF.svg" alt="" className=" cursor-pointer" />
+);
+
+export const PhoneIcon = () => (
+  <img src="/images/phone.svg" alt="" className=" cursor-pointer" />
+);
+
+export const LogoTextIcon = () => (
+  <img src="/images/logoText.svg" alt="" className=" cursor-pointer" />
+);
+
 export const DropDown = () => (
   <img src="/images/arrowDown.png" alt="" className=" cursor-pointer" />
 );
@@ -152,6 +183,10 @@ export const CopyWhite = () => (
   <img src="/images/copyWhite.png" alt="" className=" cursor-pointer" />
 );
 
+export const LightIcon = () => (
+  <img src="/images/light.svg" alt="" className=" cursor-pointer" />
+);
+
 export const UserPicture = () => (
   <img
     src="/images/user.svg"
@@ -167,6 +202,9 @@ export const User2Picture = () => <img src="/images/user2.svg" alt="" />;
 export const User3Picture = () => <img src="/images/user3.svg" alt="" />;
 export const IntroLady = () => <img src="/images/introLady.svg" alt="" />;
 export const AboutLady = () => <img src="/images/aboutLady.svg" alt="" />;
+export const AboutLadyFlat = () => (
+  <img src="/images/aboutLadyFlat.svg" alt="" />
+);
 export const ProcessGuy = () => <img src="/images/processGuy.svg" alt="" />;
 export const FiveStars = () => <img src="/images/fiveStars.svg" alt="" />;
 export const FiveStarsSmall = () => (
